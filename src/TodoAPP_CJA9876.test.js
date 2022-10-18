@@ -13,5 +13,12 @@ describe('<TodoApp_CJA9876 />', () => {
         getByText('TDD 배우기');
         getByText('react-testing-library');
     });
-        
+    it('creates new todo', () => {
+        const { getByPlaceholderText, getByText } = render(<TodoApp_CJA9876 />);
+        fireEvent.change(getByPlaceholderText("할 일을 입력하세요"),
+        { target: {value: "새 항목 추가하기"} }
+        );
+        fireEvent.click(getByText("등록"));
+        getByText("새 항목 추가하기");
+    });        
 });

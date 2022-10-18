@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import TodoApp_CJA9876 from './TodoAPP_CJA9876';
+import TodoApp_CJA9876 from './TodoApp_CJA9876';
 
 describe('<TodoApp_CJA9876 />', () => {
     it('renders TodoFrom TodoList', () => {
@@ -20,5 +20,12 @@ describe('<TodoApp_CJA9876 />', () => {
         );
         fireEvent.click(getByText("등록"));
         getByText("새 항목 추가하기");
-    });        
+    });
+    it('toggles todo', () => {
+        const { getByText } = render(<TodoApp_CJA9876 />);
+        const todoText = getByText('TDD 배우기');
+        expect(todoText).not.toHaveStyle('text-decoration: line-through');
+        fireEvent.click(todoText);
+        expect(todoText).toHaveStyle('text-decoration: line-through');
+    });
 });

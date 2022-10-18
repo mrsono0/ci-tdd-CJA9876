@@ -39,7 +39,7 @@ const TodoApp_NEWJYH = () => {
         );
     }, [todos]);
     return (<div>
-        <h1>안녕하세요 진아님 NEWJYH 정영훈</h1>
+        <h1>NEWJYH 안녕하세요 진아님 NEWJYH 정영훈</h1>
         <TodoForm onInsert={onInsert}/>
         <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove}/>
     </div>);

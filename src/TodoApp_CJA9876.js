@@ -39,6 +39,7 @@ const TodoApp_CJA9876 = () => {
         );
     }, [todos]);
     return (<div>
+        <h1>221019 12:35 JA</h1>
         <TodoForm onInsert={onInsert}/>
         <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove}/>
     </div>);
